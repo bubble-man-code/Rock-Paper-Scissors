@@ -17,8 +17,14 @@
     }
     //return it
 } */
+
 //the better version
 function getComputerChoice(){
     choices =["Rock","Paper","Scissors"];
     return choices[Math.floor(Math.random()*3)]
+}
+
+function getHumanChoice(){
+return typeof(prompt("Choose Rock,Paper or Scissors"))
+
 }
