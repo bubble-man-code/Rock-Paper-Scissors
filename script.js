@@ -20,11 +20,33 @@
 
 //the better version
 function getComputerChoice(){
-    choices =["Rock","Paper","Scissors"];
+    choices =["rock","paper","scissors"];
     return choices[Math.floor(Math.random()*3)]
 }
 
 function getHumanChoice(){
-return typeof(prompt("Choose Rock,Paper or Scissors"))
-
+return prompt("Choose Rock,Paper or Scissors")
 }
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice){
+humanChoice = humanChoice.toLowerCase()
+if (humanChoice === computerChoice){
+console.log("draw")
+}else if ((humanChoice == "rock" && computerChoice =="paper")||
+          (humanChoice == "paper" && computerChoice =="scissors")||
+          (humanChoice == "scissors" && computerChoice =="rock")
+){
+    console.log("pc won")
+    computerScore ++
+    console.log(computerScore)
+}else{console.log("human won")
+        humanScore ++
+    console.log(humanScore)
+}
+}
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
+
+pglayRound(humanSelection, computerSelection);
