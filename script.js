@@ -20,7 +20,7 @@
 
 //the better version
 function getComputerChoice(){
-    choices =["rock","paper","scissors"];
+    let choices =["rock","paper","scissors"];
     return choices[Math.floor(Math.random()*3)]
 }
 
@@ -40,13 +40,15 @@ console.log("draw")
 ){
     console.log("pc won")
     computerScore ++
-    console.log(computerScore)
 }else{console.log("human won")
         humanScore ++
-    console.log(humanScore)
 }
 }
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
+function playGame(){
+for (let i =0 ; i<4 ; i++){
+playRound(getHumanChoice(), getComputerChoice());
 
-pglayRound(humanSelection, computerSelection);
+}
+return computerScore===humanScore? console.log("its a draw") :  computerScore<humanScore ? console.log("human is winner") : console.log("machine won")
+}
+playGame()
